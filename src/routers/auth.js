@@ -4,22 +4,22 @@ import { userRegisterSchema, userLoginSchema } from '../validation/user.js';
 import { ctrlWrapper } from '../utils/ctrlWrapper.js';
 import { validateBody } from '../middlewares/validateBody.js';
 
-const router = Router();
+const authRouter = Router();
 
-router.post(
+authRouter.post(
   '/signup',
   validateBody(userRegisterSchema),
   ctrlWrapper(authController.registerController),
 );
 
-router.post(
+authRouter.post(
   '/signin',
   validateBody(userLoginSchema),
   ctrlWrapper(authController.loginController),
 );
 
-router.post('/logout', ctrlWrapper(authController.logoutController));
+authRouter.post('/logout', ctrlWrapper(authController.logoutController));
 
-router.post('/refresh', ctrlWrapper(authController.refreshController));
+authRouter.post('/refresh', ctrlWrapper(authController.refreshController));
 
-export default router;
+export default authRouter;
