@@ -8,7 +8,7 @@ const waterSchema = new Schema(
     },
     amount: {
       type: Number,
-      // required: true,
+      required: true,
     },
     curDaylyNorm: {
       type: Number,
@@ -25,6 +25,8 @@ const waterSchema = new Schema(
   },
   { versionKey: false, timestamps: true },
 );
+
+waterSchema.index({ userId: 1, date: 1 });
 
 const WaterCollection = model('water', waterSchema);
 export default WaterCollection;

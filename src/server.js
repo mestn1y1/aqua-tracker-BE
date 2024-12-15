@@ -6,6 +6,7 @@ import { errorHandler } from './middlewares/errorHandler.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import { swagger } from './middlewares/swagger.js';
 import router from './routers/index.js';
+import waterRouter from './routers/water.js';
 
 const PORT = 3000;
 
@@ -28,7 +29,7 @@ export const startServer = () => {
       },
     }),
   );
-
+  app.use('water', waterRouter);
   app.use('/api-docs', swagger());
 
   app.use(router);

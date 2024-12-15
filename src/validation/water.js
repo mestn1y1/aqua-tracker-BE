@@ -35,4 +35,10 @@ const waterValidationSchema = Joi.object({
   }),
 });
 
+export const addWaterSchema = Joi.object({
+  date: Joi.date().required(),
+  amount: Joi.number().required(),
+  servings: Joi.number(),
+});
+
 export default waterValidationSchema;
