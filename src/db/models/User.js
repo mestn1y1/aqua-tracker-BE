@@ -8,31 +8,25 @@ const userSchema = new Schema(
       type: String,
       default: 'User',
     },
-
     email: {
       type: String,
       match: emailRegexp,
       unique: true,
       required: true,
     },
-
     password: {
       type: String,
       required: true,
     },
-
     gender: {
       type: String,
       enum: typeList,
       default: 'woman',
     },
-
     avatarUrl: {
       type: String,
-      // default: null,
       default: '',
     },
-
     daylyNorm: {
       type: Number,
       default: 1800,

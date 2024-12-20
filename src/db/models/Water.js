@@ -8,15 +8,11 @@ const waterSchema = new Schema(
     },
     amount: {
       type: Number,
-      // required: true,
     },
     curDaylyNorm: {
       type: Number,
       default: 1500,
     },
-    // servings: {
-    //   type: Number,
-    // },
     userId: {
       type: Schema.Types.ObjectId,
       ref: 'user',
